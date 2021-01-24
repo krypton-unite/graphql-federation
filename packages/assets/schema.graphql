@@ -1,7 +1,12 @@
 scalar JSON
 
-type Asset @key(fields: "hash"){
+type Asset @key(fields: "id"){
     id: ID!
     name: String!
+    transactions: [Transaction]!
     hash: JSON!
+}
+
+type Transaction @key(fields: "id") @extends{
+    id: ID! @external
 }

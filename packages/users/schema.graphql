@@ -3,18 +3,10 @@ scalar JSON
 type User @key(fields: "id"){
     id: ID!
     name: String!
-    incoming_transactions: [Transaction] @provides(fields: "hash")
-    outgoing_transactions: [Transaction] @provides(fields: "hash")
+    incoming_transactions: [Transaction]! @provides(fields: "to")
+    outgoing_transactions: [Transaction]! @provides(fields: "from")
 }
 
-type Transaction @key(fields: "hash") @extends{
-    from: User!
-    to: User!
-    asset: Asset!
-    hash: JSON! @external
-}
-
-type Asset @key(fields: "hash") @extends{
-    name: String! @external
-    hash: JSON! @external
+type Transaction @key(fields: "id") @extends{
+    id: ID! @external
 }
