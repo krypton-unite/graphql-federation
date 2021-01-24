@@ -3,7 +3,7 @@ scalar JSON
 type Asset @key(fields: "id"){
     id: ID!
     name: String!
-    transactions: [Transaction]!
+    transactions: [Transaction]! @provides(fields: "asset")
     hash: JSON!
 }
 
