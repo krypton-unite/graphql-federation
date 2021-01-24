@@ -1,7 +1,7 @@
 scalar JSON
 
-type Asset @key(fields: "id"){
+type Asset @key(fields: "hash"){
     id: ID!
-    name: String! @provides(fields: "id")
+    name: String!
     hash: JSON!
 }

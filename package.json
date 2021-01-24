@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "preinstall": "pwsh ./scripts/pre_install.ps1",
-    "push_service": "yarn run apollo:push_service & lerna run --stream apollo:push_service",
-    "apollo:push_service": "pwsh ./scripts/Push-Schema.ps1"
+    "push_service": "lerna run --stream apollo:push_service"
   },
   "devDependencies": {
     "apollo": "^2.32.1",
