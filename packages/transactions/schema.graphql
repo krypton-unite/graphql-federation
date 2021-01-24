@@ -1,5 +1,9 @@
 scalar JSON
 
+extend type Query {
+  recentTransactions(first: Int = 10): [Transaction]
+}
+
 type Transaction @key(fields: "id"){
     id: ID!
     from: User! @provides(fields: "outgoing_transactions")

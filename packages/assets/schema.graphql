@@ -1,5 +1,9 @@
 scalar JSON
 
+extend type Query {
+  recentAssets(first: Int = 5): [Asset]
+}
+
 type Asset @key(fields: "id"){
     id: ID!
     name: String!
