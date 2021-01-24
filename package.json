@@ -2,5 +2,14 @@
   "name": "graphql-federation",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "preinstall": "pwsh ./scripts/pre_install.ps1",
+    "push_service": "yarn run apollo:push_service & lerna run --stream apollo:push_service",
+    "apollo:push_service": "pwsh ./scripts/Push-Schema.ps1"
+  },
+  "devDependencies": {
+    "apollo": "^2.32.1",
+    "lerna": "^3.22.1"
+  }
 }

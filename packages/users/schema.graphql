@@ -1,0 +1,19 @@
+type User @key(fields: "id"){
+    id: ID!
+    name: String!
+    incoming_transactions: [Transaction] @provides(fields: "id")
+    outgoing_transactions: [Transaction] @provides(fields: "id")
+    all_transactions: [Transaction] @external
+}
+
+type Transaction @key(fields: "id") @extends{
+    from: User!
+    to: User!
+    asset: Asset!
+    hash: JSON! @external
+}
+
+type Asset @key(fields: "id") @extend{
+    name: String! @external
+    hash: JSON! @external
+}

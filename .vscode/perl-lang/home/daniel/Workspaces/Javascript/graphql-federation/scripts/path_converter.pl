@@ -1,0 +1,1 @@
+{"version":3,"vars":[{"kind":2,"containerName":"","line":54,"name":"strict"},{"containerName":"","name":"warnings","line":54,"kind":2},{"kind":2,"containerName":"File::Spec","line":55,"name":"Unix"},{"containerName":"Spec::Unix","line":57,"name":"File","kind":12},{"kind":12,"line":57,"name":"canonpath","containerName":"main::"}]}

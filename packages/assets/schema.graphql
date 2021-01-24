@@ -1,0 +1,7 @@
+scalar JSON
+
+type Asset @key(fields: "id"){
+    id: ID!
+    name: String! @provides(fields: "id")
+    hash: JSON!
+}
